@@ -16,19 +16,24 @@ const Features = () => {
         <div className={styles.section}>
             <div className={`container ${styles.grid}`}>
                 <FeatureCard
-                    icon={<FaRegClock size={24} />}
-                    title="Удобный график"
-                    description="Мы работаем без выходных с 9:00 до 21:00. Найдем время даже для самых занятых пациентов."
+                    icon={<FaShieldAlt size={28} />}
+                    title="Безопасность"
+                    description="100% стерильность инструментов. Мы используем системы АнтиСпид и АнтиГепатит."
                 />
                 <FeatureCard
-                    icon={<FaUserMd size={24} />}
-                    title="Врачи-эксперты"
-                    description="Команда специалистов высшей категории с опытом более 10 лет. Постоянное повышение квалификации."
+                    icon={<FaUserMd size={28} />}
+                    title="Экспертность"
+                    description="Врачи высшей категории. Постоянное повышение квалификации в России и за рубежом."
                 />
                 <FeatureCard
-                    icon={<FaMapMarkerAlt size={24} />}
-                    title="Наш адрес"
-                    description="г. Котовск, ул. Солнечная 6в. Удобный подъезд и парковка."
+                    icon={<FaStar size={28} />}
+                    title="Технологии"
+                    description="Современное диагностическое оборудование и качественные материалы."
+                />
+                <FeatureCard
+                    icon={<FaRegClock size={28} />}
+                    title="Комфорт"
+                    description="Удобный график, отсутствие очередей и безболезненное лечение."
                 />
             </div>
         </div>

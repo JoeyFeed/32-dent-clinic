@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaTooth, FaBars, FaTimes } from 'react-icons/fa'
 import styles from './Header.module.css'
 
-const Header = () => {
+const Header = ({ onBookingClick }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -25,13 +25,13 @@ const Header = () => {
                 </Link>
 
                 <div className={styles.mobileToggle} onClick={toggleMenu}>
-                    {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                    {isMenuOpen ? <FaTimes size={32} /> : <FaBars size={32} />}
                 </div>
 
                 <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
                     <a href="#services" className={styles.navLink} onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Услуги</a>
                     <a href="#doctors" className={styles.navLink} onClick={(e) => { e.preventDefault(); scrollToSection('doctors'); }}>Врачи</a>
-                    <a href="#prices" className={styles.navLink} onClick={(e) => { e.preventDefault(); scrollToSection('prices'); }}>Прайс</a>
+                    <a href="#reviews" className={styles.navLink} onClick={(e) => { e.preventDefault(); scrollToSection('reviews'); }}>Отзывы</a>
                     <a href="#contacts" className={styles.navLink} onClick={(e) => { e.preventDefault(); scrollToSection('contacts'); }}>Контакты</a>
 
                     {/* Mobile only actions in menu */}
@@ -39,7 +39,7 @@ const Header = () => {
                         <div className={styles.phone}>
                             <span>+7 (902) 730-40-50</span>
                         </div>
-                        <button className={styles.button}>
+                        <button className={styles.button} onClick={() => { setIsMenuOpen(false); onBookingClick(); }}>
                             Запись на прием
                         </button>
                     </div>
@@ -47,10 +47,10 @@ const Header = () => {
 
                 <div className={styles.desktopActions}>
                     <div className={styles.phone}>
-                        <span className={styles.phoneLabel}>Ежедневно 9:00 - 21:00</span>
+                        <span className={styles.phoneLabel}>Пн-Пт 10:00 - 18:00</span>
                         <span>+7 (902) 730-40-50</span>
                     </div>
-                    <button className={styles.button}>
+                    <button className={styles.button} onClick={onBookingClick}>
                         Запись на прием
                     </button>
                 </div>

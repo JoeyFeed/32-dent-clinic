@@ -1,47 +1,80 @@
 :root {
-  /* Strict & Modern Palette */
-  --primary: #0f172a;
-  /* Deep Slate/Navy - Professional */
-  --primary-light: #334155;
-  --accent: #2563eb;
-  /* Vibrant Blue for Calls to Action */
-  --accent-hover: #1d4ed8;
+  /* Modern Medical Palette */
+  --primary: #0F4C81;
+  /* Classic Blue - Pantone color of the year type, deep and trusted */
+  --primary-dark: #082D4F;
+  --primary-light: #5B8FB2;
 
-  --surface: #ffffff;
-  --surface-alt: #f1f5f9;
-  /* Light Gray/Blue Tint */
+  --accent: #20C9B6;
+  /* Fresh Teal */
+  --accent-hover: #17A595;
+  --accent-light: #E0F9F6;
 
-  --text-main: #0f172a;
-  --text-secondary: #475569;
-  --text-inverse: #ffffff;
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, #2A6FDB 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent) 0%, #4FD1C5 100%);
+  --gradient-surface: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
 
-  --border: #e2e8f0;
+  --surface: #FFFFFF;
+  --surface-alt: #F1F5F9;
+  /* Slate 100 */
+  --surface-card: #FFFFFF;
 
-  --container-width: 1240px;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --backdrop-blur: blur(12px);
+
+  --text-main: #1E293B;
+  /* Slate 800 */
+  --text-secondary: #64748B;
+  /* Slate 500 */
+  --text-light: #94A3B8;
+  --text-inverse: #FFFFFF;
+
+  --border: #E2E8F0;
+  --border-light: #F1F5F9;
+
+  --container-width: 1280px;
 
   --font-main: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Manrope', system-ui, sans-serif;
+  /* For headings */
 
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
 
+  /* Modern Shadows - Soft & Colored */
+  --shadow-sm: 0 2px 4px rgba(15, 76, 129, 0.05);
+  --shadow-md: 0 8px 16px rgba(15, 76, 129, 0.08);
+  --shadow-lg: 0 16px 32px rgba(15, 76, 129, 0.12);
+  --shadow-hover: 0 20px 40px rgba(15, 76, 129, 0.15);
+  --shadow-glow: 0 0 20px rgba(32, 201, 182, 0.3);
+
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
   font-family: var(--font-main);
   line-height: 1.6;
   font-weight: 400;
   color: var(--text-main);
-  background-color: var(--surface);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  background-color: var(--surface-alt);
+  /* Light gray background by default for depth */
+  overflow-x: hidden;
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: var(--surface);
 }
 
 .container {
@@ -51,30 +84,57 @@ body {
   padding: 0 2rem;
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1.25rem;
-  }
-
-  :root {
-    font-size: 14px;
-    /* Slightly smaller base font size for mobile */
-  }
-}
-
-
+/* Typography Improvements */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-display);
   color: var(--text-main);
-  line-height: 1.1;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 0;
   letter-spacing: -0.02em;
-  /* Tighter for modern look */
 }
 
 button {
+  cursor: pointer;
+  border: none;
+  background: none;
   font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utilities */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: var(--transition);
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  :root {
+    font-size: 15px;
+    /* Slightly larger text on mobile for readibility */
+  }
 }

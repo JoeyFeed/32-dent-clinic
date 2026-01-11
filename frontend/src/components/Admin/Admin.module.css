@@ -1,0 +1,361 @@
+.container {
+    padding: 4rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 60vh;
+}
+
+/* Login Form Styles */
+.loginCard {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 400px;
+    margin: 2rem auto;
+    border: 1px solid var(--border);
+}
+
+.title {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputGroup label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.input {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.2);
+}
+
+.messengers {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.messengerLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #f1f5f9;
+    border-radius: 50%;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.messengerLink:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.badgeConfirmed {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badgeRejected {
+    background-color: #fca5a5;
+    color: #991b1b;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badgePending {
+    background-color: #fef9c3;
+    color: #854d0e;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.rowRejected {
+    opacity: 0.6;
+    background-color: #fff1f2;
+}
+
+.actionsCell {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btnConfirm {
+    background: #22c55e;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.btnConfirm:hover {
+    background: #15803d;
+}
+
+.btnReject {
+    background: #ef4444;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.btnReject:hover {
+    background: #b91c1c;
+}
+
+.deleteButton {
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.deleteButton:hover {
+    background: #fee2e2;
+    border-color: #fee2e2;
+}
+
+.button {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.875rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background-color: var(--primary-hover);
+}
+
+.errorMessage {
+    background-color: #fef2f2;
+    color: #ef4444;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    text-align: center;
+    border: 1px solid #fecaca;
+}
+
+/* Dashboard Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.logoutButton {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+}
+
+.logoutButton:hover {
+    background-color: #f1f5f9;
+    color: #ef4444;
+    border-color: #fca5a5;
+}
+
+.dayGroup {
+    margin-bottom: 2.5rem;
+}
+
+.dateHeader {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-block;
+    min-width: 250px;
+    box-shadow: var(--shadow-sm);
+    text-transform: capitalize;
+}
+
+.tableContainer {
+    overflow-x: auto;
+    background: white;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    margin-top: -1px;
+    /* Connect with header */
+}
+
+/* Adjust table radius if it follows a header */
+.dateHeader+.tableContainer {
+    border-top-left-radius: 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.table th {
+    background-color: #f8fafc;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+}
+
+.table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.timeCell {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.nameCell {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.phoneLink {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.phoneLink:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.metaCell {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.deleteBtn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.deleteBtn:hover {
+    background-color: #fef2f2;
+    color: #ef4444;
+    border-color: #fecaca;
+}
+
+.status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background-color: #e2e8f0;
+    color: #64748b;
+}
+
+.status.pending {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.status.confirmed {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    background: #f8fafc;
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--border);
+}

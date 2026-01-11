@@ -1,19 +1,23 @@
 import { FaTooth, FaMagic, FaSyringe, FaChild, FaXRay } from 'react-icons/fa'
 import styles from './Services.module.css'
 
-const ServiceCard = ({ icon, title, items }) => (
+const ServiceCard = ({ icon, title, notes, items }) => (
     <div className={styles.card}>
         <div className={styles.cardIcon}>{icon}</div>
         <h3 className={styles.cardTitle}>{title}</h3>
+        {notes && <p className={styles.cardNotes}>{notes}</p>}
         <ul className={styles.cardList}>
             {items.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index} className={styles.cardListItem}>
+                    <span className={styles.itemName}>{item.name}</span>
+                    {item.price && <span className={styles.itemPrice}>{item.price}</span>}
+                </li>
             ))}
         </ul>
     </div>
 )
 
-const Services = () => {
+const Services = ({ onBookingClick }) => {
     return (
         <section id="services" className={styles.section}>
             <div className="container">
@@ -29,22 +33,41 @@ const Services = () => {
                     <ServiceCard
                         icon={<FaTooth size={32} />}
                         title="Терапия"
-                        items={['Лечение кариеса', 'Лечение пульпита', 'Пломбирование каналов', 'Лечение периодонтита']}
+                        items={[
+                            { name: 'Лечение кариеса', price: 'от 5 000 ₽' },
+                            { name: 'Лечение пульпита', price: 'от 7 000 ₽' },
+                            { name: 'Пломбирование каналов', price: 'от 4 000 ₽' },
+                            { name: 'Лечение периодонтита', price: 'от 8 000 ₽' }
+                        ]}
                     />
                     <ServiceCard
                         icon={<FaMagic size={32} />}
                         title="Ортопедия"
-                        items={['Коронки и мосты', 'Виниры', 'Протезирование на имплантах', 'Съёмные протезы']}
+                        items={[
+                            { name: 'Коронки и мосты', price: 'от 12 000 ₽' },
+                            { name: 'Виниры', price: 'от 25 000 ₽' },
+                            { name: 'Протезирование на имплантах', price: 'от 30 000 ₽' },
+                            { name: 'Съёмные протезы', price: 'от 20 000 ₽' }
+                        ]}
                     />
                     <ServiceCard
                         icon={<FaSyringe size={32} />}
                         title="Хирургия"
-                        items={['Удаление зубов', 'Имплантация', 'Пластика десны', 'Синус-лифтинг']}
+                        items={[
+                            { name: 'Удаление зубов', price: 'от 3 000 ₽' },
+                            { name: 'Имплантация', price: 'от 35 000 ₽' },
+                            { name: 'Пластика десны', price: 'от 8 000 ₽' },
+                            { name: 'Синус-лифтинг', price: 'от 25 000 ₽' }
+                        ]}
                     />
                     <ServiceCard
                         icon={<FaChild size={32} />}
-                        title="Детская стоматология"
-                        items={['Лечение молочных зубов', 'Герметизация фиссур', 'Уроки гигиены', 'Исправление прикуса']}
+                        title="Детский осмотр"
+                        notes="Лечение не проводим. Прием только по предварительной записи."
+                        items={[
+                            { name: 'Осмотр и консультация', price: '1 000 ₽' },
+                            { name: 'Адаптация ребенка', price: 'Бесплатно' }
+                        ]}
                     />
                 </div>
 
@@ -70,10 +93,10 @@ const Services = () => {
                                 современных композитных материалов. Работа выполнена за одно посещение.
                                 Минимальное вмешательство с максимальным эстетическим результатом.
                             </p>
-                            <button className="primaryButton" style={{ backgroundColor: 'var(--primary)', color: 'white', border: 'none', padding: '1rem 2rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
-                                Хочу так же
-                            </button>
                         </div>
+                        <button className={styles.caseButton} onClick={onBookingClick}>
+                            Хочу так же
+                        </button>
                     </div>
                 </div>
 

@@ -29,12 +29,22 @@ const Doctors = () => {
                     </p>
                 </div>
 
-                <div className={styles.grid} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 400px))', justifyContent: 'center' }}>
+                <div className={styles.grid}>
                     <DoctorCard
                         name="Саградян Валерий Сергеевич"
-                        specialty="Главный врач | Стоматолог-ортопед, Терапевт, Хирург-имплантолог"
+                        specialty="Генеральный директор клиники | Главный врач, Стоматолог-ортопед, Терапевт, Хирург-имплантолог"
                         experience="20 лет"
-                        image="/images/doctor.webp"
+                        image="/images/doctors/doctor.jpg"
+                    />
+                    <DoctorCard
+                        name="Смирнова Елена Александровна"
+                        specialty="Ассистент стоматолога"
+                        experience="7 лет"
+                    />
+                    <DoctorCard
+                        name="Волкова Мария Дмитриевна"
+                        specialty="Старшая медицинская сестра"
+                        experience="12 лет"
                     />
                 </div>
             </div>
