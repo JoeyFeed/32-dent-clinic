@@ -12,16 +12,6 @@ import BookingModal from './components/BookingModal/BookingModal'
 import Reviews from './components/Reviews/Reviews'
 import AdminPage from './components/Admin/AdminPage'
 
-// Простой компонент заглушка
-const PagePlaceholder = ({ title }) => (
-    <div style={{ padding: '8rem 0', textAlign: 'center' }}>
-        <div className="container">
-            <h2>{title}</h2>
-            <p>Эта страница находится в разработке.</p>
-        </div>
-    </div>
-)
-
 function App() {
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
 
@@ -45,10 +35,6 @@ function App() {
                                 <Contacts />
                             </div>
                         } />
-                        <Route path="/services" element={<PagePlaceholder title="Наши Услуги" />} />
-                        <Route path="/doctors" element={<PagePlaceholder title="Наши Врачи" />} />
-                        <Route path="/prices" element={<PagePlaceholder title="Прайс-лист" />} />
-                        <Route path="/contacts" element={<Contacts />} />
                         <Route path="/admin" element={<AdminPage />} />
                     </Routes>
                 </main>
